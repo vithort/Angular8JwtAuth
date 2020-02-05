@@ -1,5 +1,9 @@
 # Angular8JwtAuth
 
+Angular 8 JWT Authentication with HttpInterceptor and Router
+
+[Origem](https://bezkoder.com/angular-jwt-authentication/)
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.23.
 
 ## Development server
@@ -25,3 +29,16 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+
+> ng g s _services/auth
+> ng g s _services/token-storage
+> ng g s _services/user
+
+> ng g c login
+> ng g c register
+> ng g c home
+> ng g c profile
+> ng g c board-admin
+> ng g c board-moderator
+> ng g c board-user
