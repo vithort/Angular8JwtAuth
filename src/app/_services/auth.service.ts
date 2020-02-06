@@ -4,8 +4,16 @@ import { Observable } from 'rxjs';
 
 const AUTH_API = 'http://localhost:8080/api/auth/';
 
-const httpOptions = {
+const httpOptions2 = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+};
+
+let httpHeaders = new HttpHeaders()
+  .set('Content-Type', 'application/json')
+  .set('Cache-Control', 'no-cache')
+
+let httpOptions = {
+  headers: httpHeaders
 };
 
 @Injectable({
@@ -16,10 +24,13 @@ export class AuthService {
   constructor(private http: HttpClient) { }
 
   login(credentials): Observable<any> {
-    return this.http.post(AUTH_API + 'signin', {
-      username: credentials.username,
-      password: credentials.password
-    }, httpOptions);
+    return this.http.post(AUTH_API + 'login', {
+      login: credentials.username,
+      senha: credentials.password
+    }, {
+      observe: 'response',
+      responseType: 'text'
+    });
   }
 
   register(user): Observable<any> {
